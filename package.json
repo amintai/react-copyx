@@ -1,0 +1,13 @@
+{
+  "name": "react-copyx-monorepo",
+  "private": true,
+  "version": "0.0.1",
+  "workspaces": [
+    "demo-project",
+    "react-copyx"
+  ],
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "tsup": "^8.5.0"
+  }
+}
