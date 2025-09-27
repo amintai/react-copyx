@@ -5,12 +5,13 @@
     "lib": ["DOM", "ES2020"],
     "jsx": "react-jsx",
     "declaration": true,
+    "emitDeclarationOnly": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "strict": true,
     "outDir": "dist"
   },
-  "include": ["src"],
+  "include": ["src", "src/types"],
   "exclude": ["node_modules", "dist"]
 }

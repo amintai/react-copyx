@@ -1,7 +1,12 @@
-import { CopyButton } from "react-copyx";
+import { CopyHtmlButton, CopyImageButton, CopyJsonButton, CopyTextButton } from "./components/buttons";
 
 function App() {
-  return <CopyButton text="Hello World!" />;
+  return <>
+    <CopyTextButton />
+    <CopyHtmlButton />
+    <CopyJsonButton />
+    <CopyImageButton />
+  </>;
 }
 
 export default App;
