@@ -1,7 +1,7 @@
 {
   "name": "react-copyx-monorepo",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "release": "pnpm --filter react-copyx version patch && pnpm --filter react-copyx build && npm publish ./react-copyx --access public && git add react-copyx/package.json && git commit -m 'chore(release): release new version' && git tag v$(node -p \"require('./react-copyx/package.json').version\") && git push && git push --tags"
   },
