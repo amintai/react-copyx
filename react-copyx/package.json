@@ -1,6 +1,6 @@
 {
   "name": "react-copyx",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -8,12 +8,21 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "build": "tsup src/index.ts --format cjs,esm --dts --minify --treeshake --clean",
     "dev": "tsup src/index.ts --watch --format cjs,esm --dts",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "jest"
   },
-  "keywords": [],
+  "keywords": [
+    "react copy",
+    "react copy to clipboard",
+    "react copy text",
+    "copy hook react",
+    "copy utility react",
+    "clipboard",
+    "react hook",
+    "copy text"
+  ],
   "author": "",
   "license": "ISC",
   "description": "",
