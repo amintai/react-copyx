@@ -108,10 +108,3 @@ I built this package to **eliminate repetitive copy-to-clipboard logic** across 
 
 - NPM: [https://www.npmjs.com/package/react-copyx](https://www.npmjs.com/package/react-copyx)  
 - GitHub: [https://github.com/amintai/react-copyx](https://github.com/amintai/react-copyx)  
-
----
-
-## ⚡ Screenshots
-
-*(Include screenshot(s) of the demo app here to show UI and functionality)*
-
