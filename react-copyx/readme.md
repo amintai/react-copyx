@@ -1,23 +1,22 @@
-# React CopyX
+# React CopyX 🪄 – React Clipboard Hook & Components
 
-A **powerful, flexible React hook and components for copying text, HTML, JSON, and images to clipboard** with fallback support.
-Make copying easy in your React apps, with **success states, copy history, and optional callbacks**.
-
----
-
-## Features
-
-* Copy **plain text**, **HTML**, **JSON**, and **images**.
-* Auto success state management (`isCopying`, `lastCopied`, `copyCount`, `history`).
-* Modern Clipboard API with **fallback support**.
-* **Optional callbacks** on success or error.
-* Easy to integrate **React components** for quick demos.
-* Works in **React 18+** apps.
-* Minimal and dependency-free.
+A **powerful, flexible React hook and components for copying text, HTML, JSON, and images to the clipboard** with built-in success states, copy history, and fallback support.  
+Make copying effortless in your **React 18+ apps** with a **lightweight, dependency-free clipboard solution**.
 
 ---
 
-## Installation
+## ✨ Features
+
+- 📋 Copy **plain text**, **HTML**, **JSON**, and **images**.  
+- 🔄 Auto success state management: `isCopying`, `lastCopied`, `copyCount`, `history`.  
+- 🌍 Modern **Clipboard API** with **fallback support** for older browsers.  
+- 🎯 **Optional callbacks** on success or error.  
+- ⚡ Ready-to-use **React components** for quick demos.  
+- 🪶 Lightweight, **dependency-free** (< 4KB gzipped).  
+
+---
+
+## 📦 Installation
 
 Install via npm or pnpm:
 
@@ -29,14 +28,13 @@ npm install react-copyx
 pnpm add react-copyx
 ```
 
-> ⚠️ Demo-specific styling or libraries (Tailwind, icons) should only be installed in your demo/docs apps, not in your package.
+> ⚠️ Demo-only dependencies (Tailwind, icons) are **not included** in the package.
 
 ---
 
-## Usage
+## 🪝 Usage
 
 ### Using the Hook
-
 ```tsx
 import { useCopy } from 'react-copyx';
 
@@ -58,40 +56,60 @@ export const MyComponent = () => {
 
 ---
 
+## 📖 API Reference
+
 ### Hook API
 
-| Prop / Return          | Type                                           | Description                                                   |                                                                  |                                                                                                  |
-| ---------------------- | ---------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `copy(value, options)` | `(value: string                                | Blob                                                          | Record<string,unknown>, options?: CopyOptions) => Promise<void>` | Copy a value to clipboard. `options` allows specifying format (`text`, `html`, `json`, `image`). |
-| `isCopying`            | `boolean`                                      | True while copy action is in progress.                        |                                                                  |                                                                                                  |
-| `lastCopied`           | `{ value: string, timestamp: number } \| null` | Last copied value and time.                                   |                                                                  |                                                                                                  |
-| `copyCount`            | `number`                                       | Total number of copy actions triggered.                       |                                                                  |                                                                                                  |
-| `history`              | `Array<{ value: string, timestamp: number }>`  | Optional history of copied values (if `keepHistory` is true). |                                                                  |                                                                                                  |
-| `hasCopiedRecently`    | `boolean`                                      | True if last copy was within `resetAfter` ms.                 |                                                                  |                                                                                                  |
+| Prop / Return          | Type                                           | Description                                                                                     |
+| ---------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `copy(value, options)` | `(value: string \| Blob \| Record<string,unknown>, options?: CopyOptions) => Promise<void>` | Copy a value to clipboard. Supports `text`, `html`, `json`, and `image`. |
+| `isCopying`            | `boolean`                                      | True while copy action is in progress.                                                          |
+| `lastCopied`           | `{ value: string, timestamp: number } \| null` | Last copied value and timestamp.                                                                |
+| `copyCount`            | `number`                                       | Total number of copy actions.                                                                   |
+| `history`              | `Array<{ value: string, timestamp: number }>`  | History of copied values (if `keepHistory` is enabled).                                         |
+| `hasCopiedRecently`    | `boolean`                                      | True if last copy was within `resetAfter` ms.                                                   |
+
+---
 
 ### CopyOptions
 
-| Option     | Type      | Default | Description                                 |          |          |                               |
-| ---------- | --------- | ------- | ------------------------------------------- | -------- | -------- | ----------------------------- |
-| `format`   | `'text'   | 'html'  | 'json'                                      | 'image'` | `'text'` | Format of the copied content. |
-| `fallback` | `boolean` | `true`  | Whether to use fallback for older browsers. |          |          |                               |
-| `mimeType` | `string`  | —       | Custom MIME type for images.                |          |          |                               |
+| Option     | Type      | Default | Description                                 |
+| ---------- | --------- | ------- | ------------------------------------------- |
+| `format`   | `'text' \| 'html' \| 'json' \| 'image'` | `'text'` | Format of the copied content. |
+| `fallback` | `boolean` | `true`  | Enable fallback for unsupported browsers.   |
+| `mimeType` | `string`  | —       | Custom MIME type (for images).              |
 
 ---
 
-## Best Practices
+## 💡 Best Practices
 
-* Use `keepHistory: true` if you need multiple copy tracking.
-* Always provide `onError` callback for robust apps.
-* HTML copy is supported in modern browsers; fallback may strip formatting.
-* Images require modern Clipboard API support (`navigator.clipboard.write`).
-
----
-
-This keeps the package **lightweight and dependency-free**.
+- Use `keepHistory: true` if you need multiple copy tracking.  
+- Always provide an `onError` callback for robust apps.  
+- HTML copy requires modern browsers; fallback may strip formatting.  
+- Images require `navigator.clipboard.write` support.  
 
 ---
 
-## License
+## ❓ FAQ (SEO Optimized)
 
-MIT © Amin Tai
+### 🔹 How do I copy text to clipboard in React?
+Use the `useCopy` hook:
+```tsx
+const { copy } = useCopy();
+copy("Hello World");
+```
+
+### 🔹 Can I copy JSON or HTML to clipboard in React?
+Yes!  
+```ts
+copyToClipboard({ text: JSON.stringify({ name: "Amin" }), format: "application/json" });
+```
+
+### 🔹 Does React CopyX support images?
+Yes, with the modern Clipboard API (`navigator.clipboard.write`).  
+
+---
+
+## 📄 License
+
+MIT © [Amin Tai](https://github.com/amintai)
