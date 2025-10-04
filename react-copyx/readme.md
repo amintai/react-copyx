@@ -1,11 +1,11 @@
-# React CopyX 🪄 – React Clipboard Hook & Components
+# React CopyX – React Clipboard Hook & Components
 
 A **powerful, flexible React hook and components for copying text, HTML, JSON, and images to the clipboard** with built-in success states, copy history, and fallback support.  
 Make copying effortless in your **React 18+ apps** with a **lightweight, dependency-free clipboard solution**.
 
 ---
 
-## ✨ Features
+## Features
 
 - 📋 Copy **plain text**, **HTML**, **JSON**, and **images**.  
 - 🔄 Auto success state management: `isCopying`, `lastCopied`, `copyCount`, `history`.  
@@ -16,7 +16,7 @@ Make copying effortless in your **React 18+ apps** with a **lightweight, depende
 
 ---
 
-## 📦 Installation
+## Installation
 
 Install via npm or pnpm:
 
@@ -28,11 +28,11 @@ npm install react-copyx
 pnpm add react-copyx
 ```
 
-> ⚠️ Demo-only dependencies (Tailwind, icons) are **not included** in the package.
+> Demo-only dependencies (Tailwind, icons) are **not included** in the package.
 
 ---
 
-## 🪝 Usage
+## Usage
 
 ### Using the Hook
 ```tsx
@@ -56,7 +56,7 @@ export const MyComponent = () => {
 
 ---
 
-## 📖 API Reference
+## API Reference
 
 ### Hook API
 
@@ -81,7 +81,7 @@ export const MyComponent = () => {
 
 ---
 
-## 💡 Best Practices
+## Best Practices
 
 - Use `keepHistory: true` if you need multiple copy tracking.  
 - Always provide an `onError` callback for robust apps.  
@@ -90,7 +90,7 @@ export const MyComponent = () => {
 
 ---
 
-## ❓ FAQ (SEO Optimized)
+## FAQ (SEO Optimized)
 
 ### 🔹 How do I copy text to clipboard in React?
 Use the `useCopy` hook:

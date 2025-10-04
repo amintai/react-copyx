@@ -9,7 +9,7 @@ interface LastCopied {
 interface UseCopyOptions {
   onSuccess?: (value: string) => void
   onError?: (err: unknown) => void
-  resetAfter?: number // ms
+  resetAfter?: number 
   keepHistory?: boolean
 }
 
@@ -35,7 +35,6 @@ export function useCopy(opts?: UseCopyOptions) {
 
         onSuccess?.(value)
 
-        // Auto reset
         if (resetAfter > 0) {
           clearTimeout(timeoutRef.current)
           timeoutRef.current = window.setTimeout(() => {
@@ -52,7 +51,6 @@ export function useCopy(opts?: UseCopyOptions) {
     [keepHistory, onSuccess, onError, resetAfter]
   )
 
-  // Cleanup timeout
   useEffect(() => {
     return () => clearTimeout(timeoutRef.current)
   }, [])

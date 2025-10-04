@@ -1,27 +1,27 @@
-# React CopyX 🪄 – Copy to Clipboard Made Easy in React
+# React CopyX – Copy to Clipboard Made Easy in React
 
 A **lightweight, flexible React hook and utility library for copying text, JSON, HTML, and images to the clipboard** with built-in success state handling.  
 Perfect for building **React apps, forms, editors, and dashboards** where users need quick **copy-to-clipboard functionality**. Includes a live **demo project** to try it instantly.
 
 ---
 
-## 🚀 Features
+## Features
 
-### 📦 Package: `react-copyx`
+### Package: `react-copyx`
 - 📋 Copy **plain text**, **JSON objects**, **HTML**, and **custom clipboard formats** with a single line.
 - 🔄 Automatic state management: `isCopying`, `lastCopied`, `history`.
 - 🪝 **React hook** + **utility functions** for flexible use cases.
 - 🪶 Super lightweight (~3.7KB gzipped), tree-shakable, zero bloat.
 - ✅ Works with **React 16+** as a peer dependency (no React bundled in).
 
-### 🎮 Demo Project
+### Demo Project
 - Playground to test the hook & utilities.
 - Example copy buttons, text areas, JSON objects.
 - Real-time **visual feedback** for successful copy actions.
 
 ---
 
-## 📦 Installation
+## Installation
 
 Install the package using npm or pnpm:
 
@@ -33,7 +33,7 @@ pnpm add react-copyx
 
 ---
 
-## 🪝 Usage Examples
+## Usage Examples
 
 ### 🔹 Basic Hook Example
 ```tsx
@@ -62,7 +62,7 @@ copyToClipboard({ text: 'Some text', format: 'text/plain' });
 
 ---
 
-## 🖥️ Running the Demo Locally
+## Running the Demo Locally
 
 1. Navigate to the demo project:
    ```bash
@@ -83,7 +83,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the demo in action.
 
 ---
 
-## 💡 Why Use React CopyX?
+## Why Use React CopyX?
 
 I built this package to **eliminate repetitive copy-to-clipboard logic** across React projects.  
 With React CopyX you get:
@@ -96,7 +96,7 @@ Whether you’re building **forms, dashboards, editors, or SaaS apps**, React Co
 
 ---
 
-## ❓ FAQ (SEO Optimized)
+## FAQ (SEO Optimized)
 
 ### 🔹 How do I copy text to clipboard in React?
 Use the `useCopy` hook from React CopyX:
@@ -121,7 +121,7 @@ Currently focused on web, but **React Native support** is on the roadmap.
 
 ---
 
-## 📝 Contribution
+## Contribution
 
 - Contributions are welcome!  
 - Open issues, submit PRs, or suggest features.  
@@ -129,7 +129,7 @@ Currently focused on web, but **React Native support** is on the roadmap.
 
 ---
 
-## 📄 License
+## License
 
 [ISC License](LICENSE)
 
