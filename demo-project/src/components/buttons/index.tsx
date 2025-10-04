@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { useCopy } from "react-copyx";
 import reactLogo from "../../assets/react.svg";
-import { Check, Clipboard } from "lucide-react"; // optional icons
+import { Check, Clipboard } from "lucide-react";
 
 const ButtonWrapper = ({ children }: { children: React.ReactNode }) => (
   <div className="p-4 border rounded-2xl shadow-lg w-fit bg-white/50 backdrop-blur-sm mt-4">

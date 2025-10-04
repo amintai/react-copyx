@@ -1,12 +1,10 @@
 export interface CopyOptions {
   format?: "text" | "html" | "json" | "image"
   fallback?: boolean
-  mimeType?: string // allow custom MIME
+  mimeType?: string
 }
 
-/**
- * Copy text/HTML/JSON/images to clipboard with fallback.
- */
+
 export async function copyToClipboard(
   value: string | HTMLElement | Blob | Record<string, unknown>,
   opts: CopyOptions = {}
@@ -20,7 +18,6 @@ export async function copyToClipboard(
     return div.textContent || div.innerText || ""
   }
 
-  // Prefer modern Clipboard API
   if (navigator.clipboard) {
     try {
       if (format === "html") {
@@ -58,10 +55,8 @@ export async function copyToClipboard(
       }
 
       if (format === "json") {
-        // Always stringify JSON
         const jsonStr = typeof value === "string" ? value : JSON.stringify(value, null, 2);
 
-        // ClipboardItem with both application/json and text/plain
         const item = new ClipboardItem({
           "application/json": new Blob([jsonStr], { type: "application/json" }),
           "text/plain": new Blob([jsonStr], { type: "text/plain" })
@@ -72,7 +67,6 @@ export async function copyToClipboard(
         } catch (err) {
           if (!fallback) throw err;
 
-          // Fallback for apps not supporting Clipboard API
           const textarea = document.createElement("textarea");
           textarea.value = jsonStr;
           textarea.setAttribute("readonly", "");
@@ -93,19 +87,17 @@ export async function copyToClipboard(
 
 
       if (format === "image") {
-        // Raw Blob copy for supported environments
         if ((navigator.clipboard as any).write && value instanceof Blob) {
           const type = mimeType || value.type || "image/png";
           const item = new ClipboardItem({ [type]: value });
           try {
             await (navigator.clipboard as any).write([item]);
-            return; // Success
+            return; 
           } catch (err) {
             console.warn("Raw image copy failed, will fallback to Base64/text.", err);
           }
         }
 
-        // Fallback: convert Blob to Base64 and copy as text
         let base64data: string;
         if (value instanceof Blob) {
           const reader = new FileReader();
@@ -115,17 +107,15 @@ export async function copyToClipboard(
             reader.readAsDataURL(value);
           });
         } else if (typeof value === "string") {
-          base64data = value; // already a URL or Base64
+          base64data = value; 
         } else {
           throw new Error("Invalid value for image copy");
         }
 
-        // Copy Base64 / URL as text
         await navigator.clipboard.writeText(base64data);
         return;
       }
 
-      // Default to plain text
       if (typeof value === "string") {
         await navigator.clipboard.writeText(value)
         return
